@@ -5,8 +5,11 @@ const express = require('express')
 const app =express()
 
 //requests
-app.get('/',(req,res)=>{
+app.get('/api',(req,res)=>{
     console.log('GET request')
+    res.send({
+        name:'Charmie'
+    })
 })
 
 //listen for requests
