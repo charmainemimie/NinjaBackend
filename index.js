@@ -1,16 +1,15 @@
 const express = require('express')
-
+const bodyParser=require('body-parser')
 
 //setup express
 const app =express()
 
-//requests
-app.get('/api',(req,res)=>{
-    console.log('GET request')
-    res.send({
-        name:'Charmie'
-    })
-})
+//body parser middleware
+app.use(bodyParser.json())
+
+//initialize routes
+app.use('/api',require('./routes/api'))
+
 
 //listen for requests
 app.listen(process.env.port || 4000,()=>{

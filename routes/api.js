@@ -9,7 +9,12 @@ router.get('/ninjas',(req,res)=>{
 
 //add a new ninja to the db-POST
 router.post('/ninjas',(req,res)=>{
-    res.send({type:'POST'})
+    console.log(req.body)
+    res.send({
+        type:'POST',
+        name:req.body.name,
+        rank:req.body.rank,
+    })
 } )
 
 //update a ninja in the db-PUT
@@ -18,6 +23,8 @@ router.put('/ninjas/:id',(req,res)=>{
 } )
 
 //delete a ninja from the db-DELETE
-router.get('/ninjas/:id',(req,res)=>{
+router.delete('/ninjas/:id',(req,res)=>{
     res.send({type:'DELETE'})
 } )
+
+module.exports=router;
