@@ -2,9 +2,17 @@ const express = require("express");
 const router = express.Router();
 const Ninja = require("../models/ninja");
 
-//get a list of ninjas from the db-GET
+//get a list of all ninjas from the db-GET
 router.get("/ninjas", (req, res, next) => {
-  res.send({ type: "GET" });
+        Ninja.find({}).then((ninjas)=>{
+                res.send(ninjas)
+        })
+});
+
+//get a list of ninjas from the db based on longitude and latitude
+router.get("/ninjas", (req, res, next) => {
+    
+
 });
 
 //add a new ninja to the db-POST
