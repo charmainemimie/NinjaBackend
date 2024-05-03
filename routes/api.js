@@ -1,6 +1,6 @@
 const express = require('express')
 const router=express.Router()
-
+const Ninja=require('../models/ninja')
 
 //get a list of ninjas from the db-GET
 router.get('/ninjas',(req,res)=>{
@@ -9,12 +9,10 @@ router.get('/ninjas',(req,res)=>{
 
 //add a new ninja to the db-POST
 router.post('/ninjas',(req,res)=>{
-    console.log(req.body)
-    res.send({
-        type:'POST',
-        name:req.body.name,
-        rank:req.body.rank,
-    })
+    Ninja.create(req.body)  //returns a promise so use .then
+        .then((ninja)=>{
+             res.send(ninja)
+        }) 
 } )
 
 //update a ninja in the db-PUT
