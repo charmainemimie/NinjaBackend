@@ -22,7 +22,13 @@ router.put('/ninjas/:id',(req,res,next)=>{
 
 //delete a ninja from the db-DELETE
 router.delete('/ninjas/:id',(req,res,next)=>{
-    res.send({type:'DELETE'})
+//  console.log(req.params.id)
+
+Ninja.findByIdAndDelete({_id:req.params.id})
+        .then((ninja)=>{
+            res.send(ninja)
+})
+   
 } )
 
 module.exports=router;
