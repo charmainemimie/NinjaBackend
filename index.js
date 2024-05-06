@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser=require('body-parser')
 const mongoose=require('mongoose')
+const cors =require('cors')
 require('dotenv').config()
 //setup express
 const app =express()
@@ -10,6 +11,8 @@ const app =express()
 mongoose.connect(process.env.DB_URL)
 mongoose.Promise=global.Promise
 
+// cors
+app.use(cors('*'))
 
 //body parser middleware
 app.use(bodyParser.json())
