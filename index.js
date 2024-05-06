@@ -10,8 +10,6 @@ const app =express()
 mongoose.connect('mongodb://localhost:27017/ninjago')
 mongoose.Promise=global.Promise
 
-app.use(express.static('public'))
-
 
 //body parser middleware
 app.use(bodyParser.json())
