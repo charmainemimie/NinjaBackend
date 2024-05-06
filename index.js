@@ -1,13 +1,13 @@
 const express = require('express')
 const bodyParser=require('body-parser')
 const mongoose=require('mongoose')
-
+require('dotenv').config()
 //setup express
 const app =express()
 
 
 //connect to mongodb
-mongoose.connect('mongodb+srv://charmainemangorima:7GrjbTMeusWS6r9o@ninjadb.vs5v93r.mongodb.net/?retryWrites=true&w=majority&appName=NinjaDB')
+mongoose.connect(process.env.DB_URL)
 mongoose.Promise=global.Promise
 
 
@@ -27,6 +27,6 @@ app.use((err,req,res,next)=>{
 
 
 //listen for requests
-app.listen(process.env.port || 4000,()=>{
+app.listen(process.env.PORT || 4000,()=>{
     console.log('now listening for requests')
 })
