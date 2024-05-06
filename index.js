@@ -7,7 +7,7 @@ const app =express()
 
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017/ninjago')
+mongoose.connect('mongodb+srv://charmainemangorima:7GrjbTMeusWS6r9o@ninjadb.vs5v93r.mongodb.net/?retryWrites=true&w=majority&appName=NinjaDB')
 mongoose.Promise=global.Promise
 
 
