@@ -3,24 +3,24 @@ const router = express.Router();
 const Ninja = require("../models/ninja");
 
 //get a list of all ninjas from the db-GET
-// router.get("/ninjas", (req, res, next) => {
-//         Ninja.find({}).then((ninjas)=>{
-//                 res.send(ninjas)
-//         })
-// });
+router.get("/ninjas", (req, res, next) => {
+        Ninja.find({}).then((ninjas)=>{
+                res.send(ninjas)
+        })
+});
 
 //get a list of ninjas from the db based on longitude and latitude
-router.get("/ninjas", (req, res, next) => {
-    Ninja.aggregate([{
-        $geoNear:{
-    near:
-    {type:'point',coordinates:[parseFloat(req.query.lng),parseFloat(req.query.lat)]},
-    spherical: true ,maxdistance :100000,distanceField: "dist"}
-    }]).then(function(ninjas){
-    res.send(ninjas)
-    })
+// router.get("/ninjas", (req, res, next) => {
+//     Ninja.aggregate([{
+//         $geoNear:{
+//     near:
+//     {type:'point',coordinates:[parseFloat(req.query.lng),parseFloat(req.query.lat)]},
+//     spherical: true ,maxdistance :100000,distanceField: "dist"}
+//     }]).then(function(ninjas){
+//     res.send(ninjas)
+//     })
 
-});
+// });
 
 //add a new ninja to the db-POST
 router.post("/ninjas", (req, res, next) => {
