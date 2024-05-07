@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Bookings Project</title>
+      <title>Ninjas Project</title>
       <style>
         body {
           font-family: Arial, sans-serif;
@@ -76,12 +76,12 @@ app.get('/', (req, res) => {
       </style>
     </head>
     <body>
-      <h1>Welcome to the Bookings API!</h1>
+      <h1>Welcome to the Ninjas API!</h1>
       <p>We collect a large amount of data from our customers with their consent, see bottom right for contact details</p>
       <div class="developer-info">
-        <p>Developed by Joshua J Smith</p>
-        <p>Github: <a href="https://github.com/XJ76">XJ76</a></p>
-        <p>Phone: +263789956168</p>
+        <p>Developed by Charmaine S Mangorima</p>
+        <p>Phone: +263782487769 / +213797319463</p>
+        <p>Github: <a href="https://github.com/charmainemimie">charmainemimie</a></p>
       </div>
     </body>
     </html>  
